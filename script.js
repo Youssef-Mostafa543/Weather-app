@@ -28,7 +28,7 @@ async function getUserLocation() {
 async function getJsonWeatherData(cityname, days) {
   try {
     let response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${weather_API_Key}&q=${cityname}&days=${days}`
+      `https://api.weatherapi.com/v1/forecast.json?key=${weather_API_Key}&q=${cityname}&days=${days}`
     );
 
     if (!response.ok) {
