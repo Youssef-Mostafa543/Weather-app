@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/*
+  TODO :  dont forget to run the following command to generate the output.css file and watch for changes:
+  npx @tailwindcss/cli -i ./styles.css -o ./src/output.css --watch
+*/
+
+body {
+  @apply bg-sky-100 min-h-screen flex flex-col items-center m-0 font-sans;
+}
+
+#Global {
+  @apply w-full max-w-4xl p-8 mt-12;
+}
+
+#input-box {
+  @apply flex gap-3 justify-center mb-10;
+}
+
+#city-name {
+  @apply p-4 w-full max-w-md border-2 border-slate-300 rounded-lg text-lg focus:outline-none focus:border-sky-500;
+}
+
+#btn-submit-city {
+  @apply px-8 bg-green-600 text-white font-bold text-lg rounded-lg border-none cursor-pointer transition-colors hover:bg-green-700;
+}
+
+/* Results grid layout */
+#results {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+/* Custom class for the generated weather cards */
+.weather-card {
+  @apply bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center border border-slate-100;
+}
+
+.weather-card-header {
+  @apply font-bold text-xl text-slate-800 m-0;
+}
+
+.weather-card-date {
+  @apply text-sm text-slate-500 mt-1 mb-3;
+}
+
+.weather-card-condition {
+  @apply font-semibold text-lg text-slate-700 my-2;
+}
+
+.weather-card-details {
+  @apply w-full border-t border-slate-200 mt-4 pt-4 space-y-1 text-slate-600;
+}
