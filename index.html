@@ -5,25 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Api Project</title>
     <link rel="stylesheet" href="src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
 
   <body>
-    <!-- <nav id="navbar">
-    </nav> -->
-    <div id="Global">
-      <div id="input-box">
-        <input
-          type="text"
-          id="city-name"
-          placeholder="leave empty for current city"
-        />
-        <button id="btn-submit-city">submit</button>
+    <nav id="navbar">
+      <a href="#" class="logo">
+        <i class="fa fa-cloud"></i>
+        <div>
+          <div class="title">Weather</div>
+          <div class="tagline">Tagline goes here</div>
+        </div>
+      </a>
+
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">live camera</a></li>
+        <li><a href="#">photos</a></li>
+        <li><a href="#">contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="input-box">
+      <input
+        type="text"
+        id="city-name"
+        placeholder="leave empty for current city"
+      />
+      <button id="btn-submit-city">Find</button>
+    </div>
+
+    <img src="/city.jpg" alt="" id="background-image" />
+
+    <div id="results">
+      <div class="day1">
+        <div class="banner">
+          <div class="day-name">today</div>
+          <div class="day-date">202020</div>
+        </div>
+        <div class="day1-body">
+          <!--  -->
+          <div id="location">cairo ma3rfsh eh</div>
+
+          <div class="wrapper">
+            <h1 id="degree">15°C</h1>
+            <img
+              src="https://cdn.weatherapi.com/weather/64x64/day/140.png"
+              id="today-icon"
+              alt=""
+            />
+          </div>
+          <div id="condition">Clear ?</div>
+
+          <!--  -->
+        </div>
       </div>
 
-      <div id="results">
-        <!-- append here divs of result for each day from 1 to 3 -->
+      <div class="day2">
+        <div class="banner">
+          <div class="day-name">today</div>
+          <div class="day-date">202020</div>
+        </div>
+        
+        <div class="day2-body">
+          <img
+            src="https://cdn.weatherapi.com/weather/64x64/day/140.png"
+            class="icon"
+            alt=""
+          />
+          <div class="max-degree">11°C</div>
+          <div class="min-degree">15°C</div>
+          <div class="condition">cloudy ?</div>
+        </div>
+      </div>
+
+      <div class="day3">
+        <div class="banner">
+          <div class="day-name">today</div>
+          <div class="day-date">202020</div>
+        </div>
+
+        <div class="day3-body">
+          <img
+            src="https://cdn.weatherapi.com/weather/64x64/day/140.png"
+            class="icon"
+            alt=""
+          />
+          <div class="max-degree">11°C</div>
+          <div class="min-degree">15°C</div>
+          <div class="condition">cloudy ?</div>
+        </div>
       </div>
     </div>
+
     <!-- End  -->
     <script type="module" src="script.js"></script>
   </body>
