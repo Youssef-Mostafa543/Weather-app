@@ -4,49 +4,206 @@
   TODO :  dont forget to run the following command to generate the output.css file and watch for changes:
   npx @tailwindcss/cli -i ./styles.css -o ./src/output.css --watch
 */
-
-body {
-  @apply bg-sky-100 min-h-screen flex flex-col items-center m-0 font-sans;
+:root {
+  /* You can use Hex, HSL, RGB, or named colors */
+  --bg: #1d1f2b;
+  --dark: #242a36;
+  --light: #303644;
+  --blue: #0190dc;
+  --temp: teal;
 }
 
-#Global {
-  @apply w-full max-w-4xl p-8 mt-12;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+body {
+  background-color: var(--bg);
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+
+/*     code     */
+
+#navbar {
+  width: 80vw;
+  height: 15%;
+  margin: 2vw 10vw;
+
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* border: red 1px solid; */
+
+  /* -- -- -- -- -- -- */
+  .logo {
+    display: flex;
+    i {
+      color: var(--blue);
+      font-size: 4em;
+      margin: 0 2vh;
+    }
+  }
+  /* -- -- -- -- -- -- */
+  ul {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    li > a {
+      border: solid 1px transparent;
+      border-radius: 100vh;
+      padding: 0.5em 1em;
+      transition: all 0.3s ease;
+    }
+    li > a:hover {
+      color: var(--blue);
+      border: solid 1px var(--blue);
+    }
+    li > a:checked,
+    li > a:focus {
+      color: var(--blue);
+      border: solid 3px var(--blue);
+    }
+  }
 }
 
 #input-box {
-  @apply flex gap-3 justify-center mb-10;
+  width: 80vw;
+  height: 7vh;
+  margin: 10vh 10vw;
+
+  display: flex;
+  align-items: center;
+
+  /* border: red solid 2px; */
+  border-radius: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+
+  #city-name {
+    width: 89.5%;
+    height: 100%;
+    padding-left: 1%;
+    /* border-radius: 100vh; */
+    /* border appears here idk why*/
+    outline: none;
+  }
+  #btn-submit-city {
+    background-color: var(--blue);
+    width: 10%;
+    height: 85%;
+    border-radius: 100vh;
+  }
+  #btn-submit-city:hover {
+    background-color: color-mix(in srgb, var(--blue), #000 30%);
+  }
 }
 
-#city-name {
-  @apply p-4 w-full max-w-md border-2 border-slate-300 rounded-lg text-lg focus:outline-none focus:border-sky-500;
+#background-image {
+  position: fixed;
+  top: 15vh;
+  left: 0;
+
+  z-index: -1;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+
+  object-position: center 0%;
 }
 
-#btn-submit-city {
-  @apply px-8 bg-green-600 text-white font-bold text-lg rounded-lg border-none cursor-pointer transition-colors hover:bg-green-700;
-}
-
-/* Results grid layout */
 #results {
-  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
-}
+  display: flex;
 
-/* Custom class for the generated weather cards */
-.weather-card {
-  @apply bg-white p-6 rounded-2xl shadow-md flex flex-col items-center text-center border border-slate-100;
-}
+  width: 80%;
+  background-color: white;
+  height: 50vh;
+  margin: 0 10%;
+  border-radius: 1vh;
+  overflow: hidden;
 
-.weather-card-header {
-  @apply font-bold text-xl text-slate-800 m-0;
-}
+  .day1,
+  .day2,
+  .day3 {
+    width: calc(100% / 3);
+    height: 100%;
+  }
+  .day1,
+  .day3 {
+    background-color: var(--light);
+  }
+  .day2 {
+    background-color: var(--dark);
+  }
 
-.weather-card-date {
-  @apply text-sm text-slate-500 mt-1 mb-3;
-}
+  .banner {
+    padding: 0.2vw 0.8vw;
+    display: flex;
+    color: lightgray;
+    justify-content: space-between;
+    background-color: color-mix(in srgb, transparent, #000 30%);
+  }
 
-.weather-card-condition {
-  @apply font-semibold text-lg text-slate-700 my-2;
-}
+  .day1-body {
+    padding: 8%;
+    width: 100%;
+    height: 100%;
 
-.weather-card-details {
-  @apply w-full border-t border-slate-200 mt-4 pt-4 space-y-1 text-slate-600;
+    #location {
+      color: lightgray;
+      font-size: 1.5rem;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10% 0;
+      #degree {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      #today-icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    #condition {
+      color: var(--blue);
+    }
+  }
+  .day2-body,
+  .day3-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10% 0;
+    flex-direction: column;
+
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 2rem 0;
+    }
+
+    .min-degree {
+      font-size: 1rem;
+      color: lightgray;
+    }
+    .max-degree {
+      font-size: 3rem;
+      color: white;
+    }
+    .condition {
+      color: var(--blue);
+    }
+  }
 }
