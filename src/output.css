@@ -1,5 +1,4 @@
 /*! tailwindcss v4.3.1 | MIT License | https://tailwindcss.com */
-@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -7,35 +6,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
-    --color-green-600: oklch(62.7% 0.194 149.214);
-    --color-green-700: oklch(52.7% 0.154 150.069);
-    --color-sky-100: oklch(95.1% 0.026 236.824);
-    --color-sky-500: oklch(68.5% 0.169 237.323);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-slate-100: oklch(96.8% 0.007 247.896);
-    --color-slate-200: oklch(92.9% 0.013 255.508);
-    --color-slate-300: oklch(86.9% 0.022 252.894);
-    --color-slate-500: oklch(55.4% 0.046 257.417);
-    --color-slate-600: oklch(44.6% 0.043 257.281);
-    --color-slate-700: oklch(37.2% 0.044 257.287);
-    --color-slate-800: oklch(27.9% 0.041 260.031);
-    --color-white: #fff;
-    --spacing: 0.25rem;
-    --container-md: 28rem;
-    --container-4xl: 56rem;
-    --text-sm: 0.875rem;
-    --text-sm--line-height: calc(1.25 / 0.875);
-    --text-lg: 1.125rem;
-    --text-lg--line-height: calc(1.75 / 1.125);
-    --text-xl: 1.25rem;
-    --text-xl--line-height: calc(1.75 / 1.25);
-    --font-weight-semibold: 600;
-    --font-weight-bold: 700;
-    --radius-lg: 0.5rem;
-    --radius-2xl: 1rem;
-    --default-transition-duration: 150ms;
-    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -188,238 +158,175 @@
     display: none !important;
   }
 }
-@layer utilities {
-  .h-20 {
-    height: calc(var(--spacing) * 20);
-  }
-  .w-20 {
-    width: calc(var(--spacing) * 20);
-  }
-  .text-blue-500 {
-    color: var(--color-blue-500);
-  }
-  .text-red-500 {
-    color: var(--color-red-500);
-  }
+@layer utilities;
+:root {
+  --bg: #1d1f2b;
+  --dark: #242a36;
+  --light: #303644;
+  --blue: #0190dc;
+  --temp: teal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 body {
-  margin: 0;
+  background-color: var(--bg);
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+#navbar {
+  width: 80vw;
+  height: 15%;
+  margin: 2vw 10vw;
+  color: white;
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
   align-items: center;
-  background-color: var(--color-sky-100);
-  font-family: var(--font-sans);
-}
-#Global {
-  margin-top: calc(var(--spacing) * 12);
-  width: 100%;
-  max-width: var(--container-4xl);
-  padding: calc(var(--spacing) * 8);
-}
-#input-box {
-  margin-bottom: calc(var(--spacing) * 10);
-  display: flex;
-  justify-content: center;
-  gap: calc(var(--spacing) * 3);
-}
-#city-name {
-  width: 100%;
-  max-width: var(--container-md);
-  border-radius: var(--radius-lg);
-  border-style: var(--tw-border-style);
-  border-width: 2px;
-  border-color: var(--color-slate-300);
-  padding: calc(var(--spacing) * 4);
-  font-size: var(--text-lg);
-  line-height: var(--tw-leading, var(--text-lg--line-height));
-  &:focus {
-    border-color: var(--color-sky-500);
+  justify-content: space-between;
+  .logo {
+    display: flex;
+    i {
+      color: var(--blue);
+      font-size: 4em;
+      margin: 0 2vh;
+    }
   }
-  &:focus {
-    --tw-outline-style: none;
-    outline-style: none;
-  }
-}
-#btn-submit-city {
-  cursor: pointer;
-  border-radius: var(--radius-lg);
-  --tw-border-style: none;
-  border-style: none;
-  background-color: var(--color-green-600);
-  padding-inline: calc(var(--spacing) * 8);
-  font-size: var(--text-lg);
-  line-height: var(--tw-leading, var(--text-lg--line-height));
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-white);
-  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
-  &:hover {
-    @media (hover: hover) {
-      background-color: var(--color-green-700);
+  ul {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    li > a {
+      border: solid 1px transparent;
+      border-radius: 100vh;
+      padding: 0.5em 1em;
+      transition: all 0.3s ease;
+    }
+    li > a:hover {
+      color: var(--blue);
+      border: solid 1px var(--blue);
+    }
+    li > a:checked, li > a:focus {
+      color: var(--blue);
+      border: solid 3px var(--blue);
     }
   }
 }
-#results {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: calc(var(--spacing) * 6);
-  @media (width >= 48rem) {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-.weather-card {
+#input-box {
+  width: 80vw;
+  height: 7vh;
+  margin: 10vh 10vw;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-radius: var(--radius-2xl);
-  border-style: var(--tw-border-style);
-  border-width: 1px;
-  border-color: var(--color-slate-100);
-  background-color: var(--color-white);
-  padding: calc(var(--spacing) * 6);
-  text-align: center;
-  --tw-shadow: 0 4px 6px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 2px 4px -2px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
-  box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-}
-.weather-card-header {
-  margin: 0;
-  font-size: var(--text-xl);
-  line-height: var(--tw-leading, var(--text-xl--line-height));
-  --tw-font-weight: var(--font-weight-bold);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-slate-800);
-}
-.weather-card-date {
-  margin-top: var(--spacing);
-  margin-bottom: calc(var(--spacing) * 3);
-  font-size: var(--text-sm);
-  line-height: var(--tw-leading, var(--text-sm--line-height));
-  color: var(--color-slate-500);
-}
-.weather-card-condition {
-  margin-block: calc(var(--spacing) * 2);
-  font-size: var(--text-lg);
-  line-height: var(--tw-leading, var(--text-lg--line-height));
-  --tw-font-weight: var(--font-weight-semibold);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-slate-700);
-}
-.weather-card-details {
-  margin-top: calc(var(--spacing) * 4);
-  width: 100%;
-  :where(& > :not(:last-child)) {
-    --tw-space-y-reverse: 0;
-    margin-block-start: calc(var(--spacing) * var(--tw-space-y-reverse));
-    margin-block-end: calc(var(--spacing) * calc(1 - var(--tw-space-y-reverse)));
+  border-radius: 100vh;
+  overflow: hidden;
+  background-color: var(--bg);
+  #city-name {
+    width: 89.5%;
+    height: 100%;
+    padding-left: 1%;
+    outline: none;
   }
-  border-top-style: var(--tw-border-style);
-  border-top-width: 1px;
-  border-color: var(--color-slate-200);
-  padding-top: calc(var(--spacing) * 4);
-  color: var(--color-slate-600);
+  #btn-submit-city {
+    background-color: var(--blue);
+    width: 10%;
+    height: 85%;
+    border-radius: 100vh;
+  }
+  #btn-submit-city:hover {
+    background-color: var(--blue);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in srgb, var(--blue), #000 30%);
+    }
+  }
 }
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
+#background-image {
+  position: fixed;
+  top: 15vh;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  object-position: center 0%;
 }
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-space-y-reverse {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-border-style: solid;
-      --tw-font-weight: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-space-y-reverse: 0;
+#results {
+  display: flex;
+  width: 80%;
+  background-color: white;
+  height: 50vh;
+  margin: 0 10%;
+  border-radius: 1vh;
+  overflow: hidden;
+  .day1, .day2, .day3 {
+    width: calc(100% / 3);
+    height: 100%;
+  }
+  .day1, .day3 {
+    background-color: var(--light);
+  }
+  .day2 {
+    background-color: var(--dark);
+  }
+  .banner {
+    padding: 0.2vw 0.8vw;
+    display: flex;
+    color: lightgray;
+    justify-content: space-between;
+    background-color: color-mix(in srgb, transparent, #000 30%);
+  }
+  .day1-body {
+    padding: 8%;
+    width: 100%;
+    height: 100%;
+    #location {
+      color: lightgray;
+      font-size: 1.5rem;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10% 0;
+      #degree {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+      #today-icon {
+        width: 4rem;
+        height: 4rem;
+      }
+    }
+    #condition {
+      color: var(--blue);
+    }
+  }
+  .day2-body, .day3-body {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 10% 0;
+    flex-direction: column;
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      margin: 2rem 0;
+    }
+    .min-degree {
+      font-size: 1rem;
+      color: lightgray;
+    }
+    .max-degree {
+      font-size: 3rem;
+      color: white;
+    }
+    .condition {
+      color: var(--blue);
     }
   }
 }
